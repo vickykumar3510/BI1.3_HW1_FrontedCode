@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const AddBookForm = () => {
+  const [successMessage, setSuccessMessage] = useState("")
   const [formData, setFormData] = useState({
     title: "",
     author: "",
@@ -24,6 +25,7 @@ const AddBookForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSuccessMessage("")
     try {
       const response = await fetch("http://localhost:3000/books", {
         method: "POST",
@@ -37,6 +39,7 @@ const AddBookForm = () => {
       }
       const data = await response.json();
       console.log("Added Book", data);
+      setSuccessMessage("Book has been added")
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +48,7 @@ const AddBookForm = () => {
   return (
     <div>
       <h2>Add New Book</h2>
+      {successMessage && <p style={{color: "green"}}>{successMessage}</p>}
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
         <br />

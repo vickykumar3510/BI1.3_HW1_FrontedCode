@@ -4,7 +4,7 @@ import useFetch from "../useFetch";
 const Books = () => {
     const [successMsg, setSucessMsg] = useState("")
     const {data, loading} = useFetch("http://localhost:3000/books",)
-    console.log(data)
+    //console.log(data)
     const handleDelete = async (bookId) => {
         try{
             const response = await fetch(`http://localhost:3000/books/id/${bookId}`,
