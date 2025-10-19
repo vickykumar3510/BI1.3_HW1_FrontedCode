@@ -1,7 +1,7 @@
 import useFetch from "../useFetch";
 
 const BookByTitle = ({author}) => {
-    const {data, loading, error} = useFetch(`https://bi-1-3-hw-1-fronted-code.vercel.app/books/author/${author}`)
+    const {data, loading, error} = useFetch(`https://bi-1-3-hw-1-backend-alpha.vercel.app/books/author/${author}`)
 
    return data? (
     <>
