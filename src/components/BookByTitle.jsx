@@ -1,7 +1,7 @@
 import useFetch from "../useFetch";
 
 const BookByTitle = ({title}) => {
-    const {data, loading, error} = useFetch(`http://localhost:3000/books/title/${title}`)
+    const {data, loading, error} = useFetch(`https://bi-1-3-hw-1-fronted-code.vercel.app/books/title/${title}`)
 
    return data && data.length > 0 ? (
     <div>
